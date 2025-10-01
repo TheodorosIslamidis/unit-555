@@ -7,7 +7,7 @@ A simple yet powerful Streamlit web application designed for tabletop RPG player
 - **Dual System Calculation**: Choose between two different calculation methods:
   - **D&D 3.5e / Pathfinder**: Displays the number of bonus spell slots gained for each spell level (1-9).
   - **Final Fantasy Mana System**: Calculates a total mana pool where each bonus spell slot contributes its spell level to the total (e.g., a 3rd-level slot is worth 3 mana).
-- **Epic & Divine Spell Support**: Includes an option for characters with feats like "Divine Spellcasting," extending the calculation to support spell levels from 10th and higher levels.
+- **Epic & Divine Spell Support**: Includes an option for characters with feats like "Divine Spellcasting," extending the calculation to support spell levels from 10th and higher.
 - **Uncapped Ability Scores**: Enter any ability score, no matter how high, to support epic-level and mythic characters.
 - **Clean & Interactive UI**: A straightforward and easy-to-use interface built with Streamlit.
 - **Detailed Breakdown**: For the mana system, the app provides a clear table showing how the total mana pool is calculated from the bonus spell slots.
