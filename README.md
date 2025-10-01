@@ -1,6 +1,6 @@
 # 🔮 Mana & Bonus Spell Calculator
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app) <!-- Replace with your app's URL after deployment -->
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://unit-555.streamlit.app/)
 
 A simple yet powerful Streamlit web application designed for tabletop RPG players to calculate bonus spells or a mana pool based on their character's ability scores. This tool is primarily based on the rules found in **Dungeons & Dragons 3.5e** and **Pathfinder 1e**, with flexible options for homebrew systems.
 
