@@ -5,40 +5,34 @@ def calculate_modifier(score: int) -> int:
     """Calculates the ability modifier for a given score."""
     return (score - 10) // 2
 
-def get_bonus_spells(modifier: int, has_divine_feat: bool = False) -> list[int]:
+def get_bonus_spells(modifier: int, max_spell_level: int, has_divine_feat: bool = False) -> list[int]:
     """
     Calculates the bonus spells per day for each spell level.
     
     Args:
         modifier: The ability modifier.
+        max_spell_level: The highest spell level to calculate for.
         has_divine_feat: If True, calculates bonus spells for levels 10-25.
         
     Returns:
         A list of integers representing the bonus spells for each level.
     """
     if modifier <= 0:
-        return [0] * (25 if has_divine_feat else 9)
+        return [0] * max_spell_level
     
-    max_level = 25 if has_divine_feat else 9
     bonus_spells = []
-    for spell_level in range(1, max_level + 1):
+    for spell_level in range(1, max_spell_level + 1):
         if modifier >= spell_level:
-            if spell_level < 10:
+            # Use divine formula for levels 10+ only if the feat is enabled
+            if has_divine_feat and spell_level >= 10:
+                # Formula for Divine Spellcasting feat (levels 10+)
+                spells = (modifier - spell_level) // 4 + 2
+            elif spell_level < 10:
                 # Standard formula for spell levels 1-9
                 spells = (modifier - spell_level) // 4 + 1
             else:
-                # The Divine Spellcasting feat grants spells starting at modifier 10 for level 10,
-                # and the progression is different.
-                # Formula appears to be (modifier - spell_level) // 4 + 2
-                # This only applies if the modifier is high enough for the spell level.
-                if modifier >= 10:
-                    spells = (modifier - spell_level) // 4 + 2
-                    # Ensure spells are not negative if modifier < spell_level
-                    if spells < 0:
-                        spells = 0
-                else:
-                    spells = 0
-                spells = (modifier - spell_level) // 4 + 2
+                # No bonus spells for levels 10+ without the feat
+                spells = 0
             bonus_spells.append(spells)
         else:
             bonus_spells.append(0)
@@ -76,9 +70,17 @@ ability_score = st.number_input(
     help="Enter the score for your character's spellcasting ability (e.g., 18)."
 )
 
+max_spell_level_input = st.number_input(
+    "What is your character's highest spell level?",
+    min_value=1,
+    value=9,
+    step=1,
+    help="Enter the highest level of spell your character can cast (e.g., 9 for a 17th-level wizard)."
+)
+
 # --- Calculations ---
 modifier = calculate_modifier(ability_score)
-bonus_spells_list = get_bonus_spells(modifier, has_divine_feat)
+bonus_spells_list = get_bonus_spells(modifier, max_spell_level_input, has_divine_feat)
 
 # --- Display Results ---
 st.header("Results")
