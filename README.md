@@ -1,5 +1,7 @@
 # 🔮 Mana & Bonus Spell Calculator
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app) <!-- Replace with your app's URL after deployment -->
+
 A simple yet powerful Streamlit web application designed for tabletop RPG players to calculate bonus spells or a mana pool based on their character's ability scores. This tool is primarily based on the rules found in **Dungeons & Dragons 3.5e** and **Pathfinder 1e**, with flexible options for homebrew systems.
 
 ## ✨ Features
@@ -7,7 +9,7 @@ A simple yet powerful Streamlit web application designed for tabletop RPG player
 - **Dual System Calculation**: Choose between two different calculation methods:
   - **D&D 3.5e / Pathfinder**: Displays the number of bonus spell slots gained for each spell level (1-9).
   - **Final Fantasy Mana System**: Calculates a total mana pool where each bonus spell slot contributes its spell level to the total (e.g., a 3rd-level slot is worth 3 mana).
-- **Epic & Divine Spell Support**: Includes an option for characters with feats like "Divine Spellcasting," extending the calculation to support spell levels from 10th and higher.
+- **Epic & Divine Spell Support**: Includes an option for characters with feats like "Divine Spellcasting," extending the calculation to support spell levels from 10th to 25th.
 - **Uncapped Ability Scores**: Enter any ability score, no matter how high, to support epic-level and mythic characters.
 - **Clean & Interactive UI**: A straightforward and easy-to-use interface built with Streamlit.
 - **Detailed Breakdown**: For the mana system, the app provides a clear table showing how the total mana pool is calculated from the bonus spell slots.
@@ -39,6 +41,14 @@ You need to have Python 3.7+ installed on your system.
    ```
 
 2. Your default web browser will open with the application running locally.
+
+## ☁️ Deployment
+
+This application is deployed and hosted on Streamlit Community Cloud.
+
+1. Push your code to a public GitHub repository.
+2. Sign up for a free account at [Streamlit Community Cloud](https://streamlit.io/cloud).
+3. Link your GitHub account and deploy the repository.
 
 ## 📖 How to Use
 
